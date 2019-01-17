@@ -1,3 +1,5 @@
+import VideoList from '/compiled/src/components/VideoList.js';
+import exampleVideoData from '../data/exampleVideoData.js';
 var App = () => (
   <div>
     <nav className="navbar">
@@ -10,12 +12,19 @@ var App = () => (
         <div><h5><em>videoPlayer</em> view goes here</h5></div>
       </div>
       <div className="col-md-5">
-        <div><h5><em>videoList</em> view goes here</h5></div>
+        <VideoList videos={exampleVideoData} />
       </div>
     </div>
   </div>
 );
 
+App.propTypes = {
+  // process example video data
+};
+//comment more than enough
+//       line 13 <div><h5><em>videoList</em> view goes here</h5></div> 
+
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
+ReactDOM.render(<App />, document.getElementById('app'));
 export default App;
